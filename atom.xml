@@ -1,15 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://innocent-children.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-07-10T04:54:27.227Z</updated>
+    <title>超小墨爱学习</title>
+    <updated>2020-07-10T04:58:31.625Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://innocent-children.github.io"/>
     <link rel="self" href="https://innocent-children.github.io/atom.xml"/>
     <subtitle>我超爱学习的，请问你叫学习嘛</subtitle>
     <logo>https://innocent-children.github.io/images/avatar.png</logo>
     <icon>https://innocent-children.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 超小墨爱学习</rights>
+    <entry>
+        <title type="html"><![CDATA[关于Python中的None]]></title>
+        <id>https://innocent-children.github.io/PVlzLw75i/</id>
+        <link href="https://innocent-children.github.io/PVlzLw75i/">
+        </link>
+        <updated>2020-07-10T04:57:56.000Z</updated>
+        <content type="html"><![CDATA[<p>注意到None这个类型是在做一道Python题目时，要求说如果传进函数的字符串是“None”则返回False，糟糕的是我并不知道如何判断是否是“None”。</p>
+<hr>
+<p>None翻译成汉语的意思是“没有”，在Python中它表示空，但和空字符串、空列表不一样，做这样一个小实验：</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = []
+&gt;&gt;&gt; type(a)
+&lt;class 'list'&gt;
+&gt;&gt;&gt; b = ''
+&gt;&gt;&gt; type(b)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; c = None
+&gt;&gt;&gt; type(c)
+&lt;class 'NoneType'&gt;
+</code></pre>
+<p>可以看到，空列表与空字符串都是有类型的，分别为 ‘list’ 与 ‘str’ ，None也是有类型的，为 ‘NoneType’，就是没有类型。我们知道，在Python中一切皆对象，每个对象由：标识（identity）、类型（type）、值（value）组成。</p>
+<p>1.标识用于唯一标识对象，通常对应于对象在计算机内存中的地址。使用内置函数id(obj)可返回对象obj的标识。</p>
+<p>2.类型用于表示对象存储的“数据”的类型。类型可以限制对象的取值范围以及可执行的操作。可以使用type(obj)获得对象的所属类型。</p>
+<p>3.值表示对象所存储的数据的信息。使用print(obj)可以直接打印出值。</p>
+<hr>
+<p><strong>对象的本质就是：一个内存块，拥有特定的值，支持特定类型的相关操作。</strong></p>
+<hr>
+<p>上述代码中c的类型为NoneType，对象“c”没有值。输出上述代码中的a、b、c的值，如下所示。</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(a)
+[]
+&gt;&gt;&gt; print(b)
+
+&gt;&gt;&gt; print(c)
+None
+</code></pre>
+<hr>
+<p>回到原点，如何判断一个对象是否为None呢？可以通过布尔值来判断，空列表、空字符串、None的布尔值均为False，非空列表、字符串的布尔值则为True。</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = []
+&gt;&gt;&gt; b = ''
+&gt;&gt;&gt; c = None
+&gt;&gt;&gt; bool(a)
+False
+&gt;&gt;&gt; bool(b)
+False
+&gt;&gt;&gt; bool(c)
+False
+&gt;&gt;&gt; a.append(1)
+&gt;&gt;&gt; a
+[1]
+&gt;&gt;&gt; bool(a)
+True
+&gt;&gt;&gt; b = b + '2'
+&gt;&gt;&gt; b
+'2'
+&gt;&gt;&gt;bool(b)
+True
+</code></pre>
+<p>在实际写代码时，可以通过if…else…来判断。</p>
+<pre><code class="language-python">a = None
+
+if a:
+    print(&quot;hiahiahia~&quot;)
+else:
+    print(&quot;wuwuwu~&quot;)
+    
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://innocent-children.github.io/hello-gridea/</id>

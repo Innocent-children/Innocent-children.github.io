@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>关于Python中的None | 超小墨爱学习</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://innocent-children.github.io/favicon.ico?v=1594357108985">
+<link rel="stylesheet" href="https://innocent-children.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="注意到None这个类型是在做一道Python题目时，要求说如果传进函数的字符串是“None”则返回False，糟糕的是我并不知道如何判断是否是“None”。
+
+None翻译成汉语的意思是“没有”，在Python中它表示空，但和空字符串、空列..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://innocent-children.github.io">
+        <img src="https://innocent-children.github.io/images/avatar.png?v=1594357108985" class="site-logo">
+        <h1 class="site-title">超小墨爱学习</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      我超爱学习的，请问你叫学习嘛
+    </div>
+    <div class="site-footer">
+      <html>每一滴墨都有它的骄傲</html> | <a class="rss" href="https://innocent-children.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">关于Python中的None</h2>
+            <div class="post-date">2020-07-10</div>
+            
+            <div class="post-content" v-pre>
+              <p>注意到None这个类型是在做一道Python题目时，要求说如果传进函数的字符串是“None”则返回False，糟糕的是我并不知道如何判断是否是“None”。</p>
+<hr>
+<p>None翻译成汉语的意思是“没有”，在Python中它表示空，但和空字符串、空列表不一样，做这样一个小实验：</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = []
+&gt;&gt;&gt; type(a)
+&lt;class 'list'&gt;
+&gt;&gt;&gt; b = ''
+&gt;&gt;&gt; type(b)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; c = None
+&gt;&gt;&gt; type(c)
+&lt;class 'NoneType'&gt;
+</code></pre>
+<p>可以看到，空列表与空字符串都是有类型的，分别为 ‘list’ 与 ‘str’ ，None也是有类型的，为 ‘NoneType’，就是没有类型。我们知道，在Python中一切皆对象，每个对象由：标识（identity）、类型（type）、值（value）组成。</p>
+<p>1.标识用于唯一标识对象，通常对应于对象在计算机内存中的地址。使用内置函数id(obj)可返回对象obj的标识。</p>
+<p>2.类型用于表示对象存储的“数据”的类型。类型可以限制对象的取值范围以及可执行的操作。可以使用type(obj)获得对象的所属类型。</p>
+<p>3.值表示对象所存储的数据的信息。使用print(obj)可以直接打印出值。</p>
+<hr>
+<p><strong>对象的本质就是：一个内存块，拥有特定的值，支持特定类型的相关操作。</strong></p>
+<hr>
+<p>上述代码中c的类型为NoneType，对象“c”没有值。输出上述代码中的a、b、c的值，如下所示。</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(a)
+[]
+&gt;&gt;&gt; print(b)
+
+&gt;&gt;&gt; print(c)
+None
+</code></pre>
+<hr>
+<p>回到原点，如何判断一个对象是否为None呢？可以通过布尔值来判断，空列表、空字符串、None的布尔值均为False，非空列表、字符串的布尔值则为True。</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = []
+&gt;&gt;&gt; b = ''
+&gt;&gt;&gt; c = None
+&gt;&gt;&gt; bool(a)
+False
+&gt;&gt;&gt; bool(b)
+False
+&gt;&gt;&gt; bool(c)
+False
+&gt;&gt;&gt; a.append(1)
+&gt;&gt;&gt; a
+[1]
+&gt;&gt;&gt; bool(a)
+True
+&gt;&gt;&gt; b = b + '2'
+&gt;&gt;&gt; b
+'2'
+&gt;&gt;&gt;bool(b)
+True
+</code></pre>
+<p>在实际写代码时，可以通过if…else…来判断。</p>
+<pre><code class="language-python">a = None
+
+if a:
+    print(&quot;hiahiahia~&quot;)
+else:
+    print(&quot;wuwuwu~&quot;)
+    
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://innocent-children.github.io/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
