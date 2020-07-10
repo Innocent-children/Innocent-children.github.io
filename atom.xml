@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://innocent-children.github.io</id>
     <title>Gridea</title>
-    <updated>2020-07-10T04:53:57.837Z</updated>
+    <updated>2020-07-10T04:54:27.227Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://innocent-children.github.io"/>
     <link rel="self" href="https://innocent-children.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>我超爱学习的，请问你叫学习嘛</subtitle>
     <logo>https://innocent-children.github.io/images/avatar.png</logo>
     <icon>https://innocent-children.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://innocent-children.github.io/post/hello-gridea/</id>
-        <link href="https://innocent-children.github.io/post/hello-gridea/">
+        <id>https://innocent-children.github.io/hello-gridea/</id>
+        <link href="https://innocent-children.github.io/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
